@@ -1,5 +1,5 @@
 # ChiralEdgeWaves
 
-![alt text](https://github.com/Matt-Reeves/ChiralEdgeWaves/blob/master/edgewaves_emerge_all.png?raw=true)
+<img align="right" src="./edgewaves_emerge_all.png" width="100" height="100">
 
 Solves for lowest energy states vortex matter under thermal friction. Exhibits analogues of FQHE
