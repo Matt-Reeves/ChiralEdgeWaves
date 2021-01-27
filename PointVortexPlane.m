@@ -16,12 +16,12 @@ end
 
 
 % normal dynamics in scaled coordinates -- space scaled only
-%  dzdt = (conj(dzdt) - 1i*gamma0*kappa.'.*conj(dzdt));
-%  dzdt =  (dzdt - (1i*N + dRdt(t)*Rt(t))*zeta) /Rt(t)^2;
+  dzdt = (conj(dzdt) - 1i*gamma0*kappa.'.*conj(dzdt));
+  dzdt =  (dzdt - (1i*N + dRdt(t)*Rt(t))*zeta) /Rt(t)^2;
 
   %"Accelerated" dynamics --- unsure if this is correct yet
-  dzdt = (conj(dzdt) - 1i*gamma0*kappa.'.*conj(dzdt));
-  dzdt =  (dzdt - (1i*N + dRdt((t))*Rt((t)))*zeta);
+%   dzdt = (conj(dzdt) - 1i*gamma0*kappa.'.*conj(dzdt));
+%   dzdt =  (dzdt - (1i*N + dRdt((t))*Rt((t)))*zeta);
 
 
 % normal dynamics -- no scaling

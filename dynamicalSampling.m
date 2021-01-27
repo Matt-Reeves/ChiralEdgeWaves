@@ -2,7 +2,7 @@ clear
 clc
 close all
 
-N = 200;
+N = 1000;
 R = 1;
 Omega = N/R^2;
 gamma0 = 0.005;
@@ -25,12 +25,12 @@ Nt = 1;
 tf = 12/Omega/gamma0;
 ss = @(tt) log(1+rho0*gamma0*2*pi*tt)/R^2/rho0/gamma0/2/pi;
 options = odeset('RelTol',1e-6,'AbsTol',1e-6);
-s = linspace(0,0.2*tf,Nt);
+s = linspace(0,tf,Nt);
 
     [t,ztemp] = ode45(@(t,z) PointVortexPlane(t,z,kappa,gamma0,N,rho0,R),[0 s],z0,options);
     z = ztemp(end,:).';
-    [~,I] = max(abs(z));
-    z(I) = (abs(z(I))+0.1)*exp(1i*angle(z(I)));
+    %[~,I] = max(abs(z));
+    %z(I) = (abs(z(I))+0.1)*exp(1i*angle(z(I)));
 
 
 %%
