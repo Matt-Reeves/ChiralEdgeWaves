@@ -1,0 +1,42 @@
+clear 
+close all
+clc
+
+%load 0.5tf.mat;
+load crystallization.mat;
+
+
+for jj = 1:321
+    for zz = 1:2000
+  
+z0 = z_save(zz,:,jj);
+%z0 = z(jj,:);
+
+[~,ind] = min(abs(z0));
+zi = z0(ind);
+K = 6;
+
+temp = abs(z0-zi);
+temp(ind) = NaN;
+IDX = zeros(1,6);
+for kk = 1:K
+[~,ind2] = nanmin(temp);
+IDX(kk) = ind2;
+temp(ind2) = NaN;
+end
+
+
+%  figure(1)
+%  clf
+%  plot(z0,'.')
+%  hold on
+%  plot(z0(ind),'ok');
+%  hold on
+%  plot(z0(IDX),'sqr')
+
+psi6(zz,jj) = 1/6*sum(exp(1i*6*abs (angle(z0(IDX)) ...
+    - angle(z0([IDX(2:end) IDX(1)])) )));
+
+    end
+    disp(num2str(jj))
+end
